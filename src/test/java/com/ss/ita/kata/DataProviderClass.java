@@ -1,18 +1,24 @@
 package com.ss.ita.kata;
 
+import com.ss.ita.implementation.ImplementationEightKata;
 import com.ss.ita.implementation.ImplementationSevenKata;
+import com.ss.ita.implementation.ImplementationSixKata;
+import com.ss.ita.implementation.ImplementationFiveKata;
+
 import org.testng.annotations.DataProvider;
 import java.util.LinkedList;
 import java.util.List;
 
 public class DataProviderClass {
 
-    /*@DataProvider(name = "eightImplPackageProvider")
+    @DataProvider(name = "eightImplPackageProvider")
     public static Object[][] eightImplPackageProvider() {
-        return new Object[][]{
-                {new com.ss.ita.kata.implementation.EightImpl()}
+        ImplementationEightKata[][] objects;
+        objects = new ImplementationEightKata[][]{
+                {new ImplementationEightKata()}
         };
-    }*/
+        return objects;
+    }
 
     @DataProvider(name = "sevenImplPackageProvider")
     public static Object[][] sevenImplPackageProvider() {
@@ -23,19 +29,17 @@ public class DataProviderClass {
         return objects;
     }
 
-    /*@DataProvider(name = "sixImplPackageProvider")
+    @DataProvider(name = "sixImplPackageProvider")
     public static Object[][] sixImplPackageProvider() {
-        return new Object[][]{
-                {new com.ss.ita.kata.implementation.kubrub.SixImpl()}
-        };
+        ImplementationSixKata[][] objects = new ImplementationSixKata[][]{{new ImplementationSixKata()}};
+        return objects;
     }
 
     @DataProvider(name = "fiveImplPackageProvider")
     public static Object[][] fiveImplPackageProvider() {
-        return new Object[][]{
-                {new com.ss.ita.kata.implementation.kubrub.FiveImpl()}
-        };
-    }*/
+        ImplementationFiveKata[][] objects = new ImplementationFiveKata[][]{{new ImplementationFiveKata()}};
+        return objects;
+    }
 
     public static Object[][] combine(Object[][] impls, Object[][] data) {
         List<Object[]> matrix = new LinkedList<Object[]>();
