@@ -4,6 +4,10 @@ import com.ss.ita.implementation.ImplementationSixKata;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.ss.ita.implementation.ImplementationSixKata.isPrime;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class SixTest extends SixDataProvider {
 
 
@@ -66,5 +70,25 @@ public class SixTest extends SixDataProvider {
     @Test(dataProvider = "invalidHelpBooksellerDataProvider")
     public void testStockSummaryInvalid(ImplementationSixKata imp, String[] lstOfArt, String[] lstOf1stLetter,String expected) {
         Assert.assertEquals(imp.stockSummary(lstOfArt, lstOf1stLetter),expected);
+    }
+    @Test
+    public void positiveTestPrime() {
+        assertTrue("3 is prime", isPrime(3));
+        assertTrue("5 is prime", isPrime(5));
+        assertTrue("7 is prime", isPrime(7));
+        assertTrue("41 is prime", isPrime(41));
+        assertTrue("5099 is prime", isPrime(5099));
+    }
+
+    @Test
+    public void negativeTestPrime() {
+        assertFalse("4 is not prime", isPrime(4));
+        assertFalse("6 is not prime", isPrime(6));
+        assertFalse("8 is not prime", isPrime(8));
+        assertFalse("9 is not prime", isPrime(9));
+        assertFalse("45 is not prime", isPrime(45));
+        assertFalse("-5 is not prime", isPrime(-5));
+        assertFalse("-8 is not prime", isPrime(-8));
+        assertFalse("-41 is not prime", isPrime(-41));
     }
 }
