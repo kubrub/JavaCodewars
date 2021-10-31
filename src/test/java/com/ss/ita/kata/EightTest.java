@@ -15,13 +15,13 @@ public class EightTest extends EightDataProvider {
         Assert.assertEquals(imp.liters(time), expected);
     }
 
-    @Test(dataProvider = "validVolumeOfCuboidDataProvider")
-    public void TestGetVolumeOfCuboid(ImplementationEightKata imp, int a, long b, long c, long expected) {
+    @Test(dataProvider = "positiveVolumeOfCuboidDataProvider")
+    public void positiveTestGetVolumeOfCuboid(ImplementationEightKata imp, int a, long b, long c, long expected) {
         Assert.assertEquals(imp.getVolumeOfCuboid(a, b, c), expected);
     }
 
-    @Test(dataProvider = "invalidVolumeOfCuboidDataProvider")
-    public void NegativeTestGetVolumeOfCuboid(ImplementationEightKata imp, int a, long b, long c, long expected) {
+    @Test(dataProvider = "negativeVolumeOfCuboidDataProvider")
+    public void negativeTestGetVolumeOfCuboid(ImplementationEightKata imp, int a, long b, long c, long expected) {
         Assert.assertEquals(imp.getVolumeOfCuboid(a, b, c), expected);
     }
 
@@ -54,13 +54,13 @@ public class EightTest extends EightDataProvider {
         Assert.assertEquals(imp.stringToNumber(str), expected);
     }
 
-    @Test(dataProvider = "wilsonPrimeDataProvider")
-    public void testAmIWilson(ImplementationEightKata impl, double n, boolean expected) {
+    @Test(dataProvider = "positiveWilsonPrimeDataProvider")
+    public void positiveTestAmIWilson(ImplementationEightKata impl, double n, boolean expected) {
         Assert.assertEquals(impl.amIWilson(n), expected);
     }
 
-    @Test(dataProvider = "invalidWilsonPrimeDataProvider")
-    public void invalidTestAmIWilson(ImplementationEightKata impl, double n, boolean expected) {
+    @Test(dataProvider = "negativeWilsonPrimeDataProvider")
+    public void negativeTestAmIWilson(ImplementationEightKata impl, double n, boolean expected) {
         Assert.assertEquals(impl.amIWilson(n), expected);
     }
 
@@ -75,7 +75,7 @@ public class EightTest extends EightDataProvider {
     }
 
     @Test(dataProvider = "validDivisibleByDataProvider")
-    public void testDivisibleBy(ImplementationEightKata imp, int[] numbers, int divider, int[] expected) {
+    public void positiveTestDivisibleBy(ImplementationEightKata imp, int[] numbers, int divider, int[] expected) {
         Assert.assertEquals(imp.divisibleBy(numbers, divider), expected);
     }
 

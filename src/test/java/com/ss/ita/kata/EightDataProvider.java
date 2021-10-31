@@ -4,8 +4,8 @@ import org.testng.annotations.DataProvider;
 
 public class EightDataProvider extends DataProviderClass {
 
-    @DataProvider(name = "validVolumeOfCuboidDataProvider")
-    public static Object[][] validVolumeOfCuboidDataProvider() {
+    @DataProvider(name = "positiveVolumeOfCuboidDataProvider")
+    public static Object[][] positiveVolumeOfCuboidDataProvider() {
         Object[][] param = new Object[][]{
                 {5, 5, 5, 125},
                 {555, 555, 555, 170953875},
@@ -14,8 +14,8 @@ public class EightDataProvider extends DataProviderClass {
         return combine(eightImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "invalidVolumeOfCuboidDataProvider")
-    public static Object[][] invalidVolumeOfCuboidDataProvider() {
+    @DataProvider(name = "negativeVolumeOfCuboidDataProvider")
+    public static Object[][] negativeVolumeOfCuboidDataProvider() {
         Object[][] param = new Object[][]{
                 {0, 0, 0, -1},
                 {-1, 5, 5, -1}
@@ -34,8 +34,8 @@ public class EightDataProvider extends DataProviderClass {
         return combine(eightImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "wilsonPrimeDataProvider")
-    public static Object[][] wilsonPrimeDataProvider() {
+    @DataProvider(name = "positiveWilsonPrimeDataProvider")
+    public static Object[][] positiveWilsonPrimeDataProvider() {
         Object[][] param = new Object[][]{
                 {5, true},
                 {9, false},
@@ -44,8 +44,8 @@ public class EightDataProvider extends DataProviderClass {
         return combine(eightImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "invalidWilsonPrimeDataProvider")
-    public static Object[][] invalidWilsonPrimeDataProvider() {
+    @DataProvider(name = "negativeWilsonPrimeDataProvider")
+    public static Object[][] negativeWilsonPrimeDataProvider() {
         Object[][] param = new Object[][]{
                 {-4, false},
                 {0, false}
