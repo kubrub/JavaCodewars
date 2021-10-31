@@ -16,46 +16,42 @@ public class SixDataProvider extends DataProviderClass {
                     "Beijing:Jan 3.9,Feb 4.7,Mar 8.2,Apr 18.4,May 33.0,Jun 78.1,Jul 224.3,Aug 170.0,Sep 58.4,Oct 18.0,Nov 9.3,Dec 2.7" + "\n" +
                     "Lima:Jan 1.2,Feb 0.9,Mar 0.7,Apr 0.4,May 0.6,Jun 1.8,Jul 4.4,Aug 3.1,Sep 3.3,Oct 1.7,Nov 0.5,Dec 0.7";
 
-    @DataProvider(name = "meanDataProvider")
-    public static Object[][] meanDataProvider() {
+    @DataProvider(name = "positiveMeanDataProvider")
+    public static Object[][] positiveMeanDataProvider() {
         Object[][] param = new Object[][]{
                 {"London", data, 51.199999999999996},
                 {"Beijing", data, 52.416666666666664}
         };
-
         return combine(sixImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "invalidMeanDataProvider")
-    public static Object[][] invalidMeanDataProvider() {
+    @DataProvider(name = "negativeMeanDataProvider")
+    public static Object[][] negativeMeanDataProvider() {
         Object[][] param = new Object[][]{
                 {"", data, -1}
         };
-
         return combine(sixImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "varianceDataProvider")
-    public static Object[][] varianceDataProvider() {
+    @DataProvider(name = "positiveVarianceDataProvider")
+    public static Object[][] positiveVarianceDataProvider() {
         Object[][] param = new Object[][]{
                 {"London", data, 57.428333333333335},
                 {"Beijing", data, 4808.37138888889}
         };
-
         return combine(sixImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "invalidVarianceDataProvider")
-    public static Object[][] invalidVarianceDataProvider() {
+    @DataProvider(name = "negativeVarianceDataProvider")
+    public static Object[][] negativeVarianceDataProvider() {
         Object[][] param = new Object[][]{
                 {"", data, -1}
         };
-
         return combine(sixImplPackageProvider(), param);
     }
 
-    @DataProvider(name="validFloatingPointApproximation")
-    public static Object[][] validFloatingPointApproximation(){
+    @DataProvider(name="positiveFloatingPointApproximation")
+    public static Object[][] positiveFloatingPointApproximation(){
         Object[][] param = new Object[][]{
                 {2.6e-08, 1.29999999155e-08},
                 {1.4e-09, 6.999999997549999e-10},
@@ -64,8 +60,8 @@ public class SixDataProvider extends DataProviderClass {
         return combine(sixImplPackageProvider(), param);
     }
 
-    @DataProvider(name="invalidFloatingPointApproximation")
-    public static Object[][] invalidFloatingPointApproximation(){
+    @DataProvider(name="negativeFloatingPointApproximation")
+    public static Object[][] negativeFloatingPointApproximation(){
         Object[][] param = new Object[][]{
                 {-2.4, -1},
                 {-1.7, -1},
@@ -77,15 +73,15 @@ public class SixDataProvider extends DataProviderClass {
         return combine(sixImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "validHelpBooksellerDataProvider")
-    public static Object[][] validHelpBooksellerDataProvider(){
+    @DataProvider(name = "positiveHelpBooksellerDataProvider")
+    public static Object[][] positiveHelpBooksellerDataProvider(){
         Object[][] testData = new Object[][]{
                 {new String[]{"ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"},new String[] {"A", "B"},"(A : 200) - (B : 1140)"},
 
         };
         return combine(sixImplPackageProvider(), testData);
     }
-    @DataProvider(name = "invalidHelpBooksellerDataProvider")
+    @DataProvider(name = "negativeHelpBooksellerDataProvider")
     public static Object[][] invalidHelpBooksellerDataProvider(){
         Object[][] testData = new Object[][]{
                 {new String[]{"ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"},new String[0],""},
@@ -95,8 +91,8 @@ public class SixDataProvider extends DataProviderClass {
     }
 
 
-    @DataProvider(name = "validNbaCupDataProvider")
-    public static Object[][] validNbaCupDataProvider() {
+    @DataProvider(name = "positiveNbaCupDataProvider")
+    public static Object[][] positiveNbaCupDataProvider() {
         Object[][] param = new Object[][]{
                 {"Los Angeles Clippers 104 Dallas Mavericks 88,New York Knicks 101 Atlanta Hawks 112,Indiana Pacers 103 Memphis Grizzlies 112,"
                         + "Los Angeles Lakers 111 Minnesota Timberwolves 112,Phoenix Suns 95 Dallas Mavericks 111,Portland Trail Blazers 112 New Orleans Pelicans 94,"
@@ -120,8 +116,8 @@ public class SixDataProvider extends DataProviderClass {
         };
         return combine(sixImplPackageProvider(), param);
     }
-    @DataProvider(name = "inValidNbaCupDataProvider")
-    public static Object[][] inValidNbaCupDataProvider() {
+    @DataProvider(name = "negativeNbaCupDataProvider")
+    public static Object[][] negativeNbaCupDataProvider() {
         Object[][] param = new Object[][]{
                 {"Los Angeles Clippers 104 Dallas Mavericks 88,New York Knicks 101 Atlanta Hawks 112,Indiana Pacers 103 Memphis Grizzlies 112,"
                         + "Los Angeles Lakers 111 Minnesota Timberwolves 112,Phoenix Suns 95 Dallas Mavericks 111,Portland Trail Blazers 112 New Orleans Pelicans 94,"
@@ -159,12 +155,11 @@ public class SixDataProvider extends DataProviderClass {
                         + "Houston Rockets 120 New Orleans Pelicans 100,Boston Celtics 111 Brooklyn Nets 105,"
                         + " Hornets 94 Chicago Bulls 86,Cleveland Cavaliers 103 Dallas Mavericks 97"
                         , "", ":This team didn't play!"
-
                 }
-
         };
         return combine(sixImplPackageProvider(), param);
     }
+
     @DataProvider
     public static Object[][] positiveFindNb(){
         Object[][] testData = new Object[][]{
@@ -175,6 +170,7 @@ public class SixDataProvider extends DataProviderClass {
         };
         return combine(sixImplPackageProvider(), testData);
     }
+
     @DataProvider
     public static Object[][] negativeFindNb(){
         Object[][] testData = new Object[][]{

@@ -18,8 +18,8 @@ public class SevenDataProvider extends DataProviderClass {
         return combine(sevenImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "validSeriesSum")
-    public static Object[][] validSeriesSum() {
+    @DataProvider(name = "positiveSeriesSum")
+    public static Object[][] positiveSeriesSum() {
         Object[][] param = new Object[][]{
                 {5, "1.57"},
                 {9, "1.77"},
@@ -28,7 +28,7 @@ public class SevenDataProvider extends DataProviderClass {
         return combine(sevenImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "invalidSeriesSum")
+    @DataProvider(name = "negativeSeriesSum")
     public static Object[][] invalidSeriesSum() {
         Object[][] param = new Object[][]{
                 {0, "0.00"},

@@ -14,13 +14,13 @@ public class FiveTest extends FiveDataProvider {
         Assert.assertEquals(imp.artificialRain(arr), expected);
     }
 
-    @Test(dataProvider = "validGap")
-    public void testValidGap(ImplementationFiveKata imp, int g, long m, long n, long[] expected) {
+    @Test(dataProvider = "positiveGap")
+    public void testPositiveGap(ImplementationFiveKata imp, int g, long m, long n, long[] expected) {
         Assert.assertEquals(imp.gap(g, m, n), expected);
     }
 
-    @Test(dataProvider = "invalidGap")
-    public void testInvalidGap(ImplementationFiveKata imp, int g, long m, long n, long[] expected) {
+    @Test(dataProvider = "negativeGap")
+    public void testNegativeGap(ImplementationFiveKata imp, int g, long m, long n, long[] expected) {
         Assert.assertEquals(imp.gap(g, m, n), expected);
     }
 
@@ -47,12 +47,12 @@ public class FiveTest extends FiveDataProvider {
     public void testSolveSum() {
     }
 
-    @Test(dataProvider = "findTheSmallest")
+    @Test(dataProvider = "positiveFindTheSmallest")
     public void testSmallest(ImplementationFiveKata imp, long n, String res) {
         Assert.assertEquals(Arrays.toString(imp.smallest(n)), res);
     }
 
-    @Test(dataProvider = "invalidFindTheSmallest")
+    @Test(dataProvider = "negativeFindTheSmallest")
     public void negativeTestSmallest(ImplementationFiveKata imp, long n, String res){
         Assert.assertEquals(Arrays.toString(imp.smallest(n)), res);
     }

@@ -6,8 +6,8 @@ import java.math.BigInteger;
 
 public class FiveDataProvider extends DataProviderClass {
 
-    @DataProvider(name = "findTheSmallest")
-    public static Object[][] findTheSmallest(){
+    @DataProvider(name = "positiveFindTheSmallest")
+    public static Object[][] positiveFindTheSmallest(){
         Object[][] param = new Object[][]{
                 {261235, "[126235, 2, 0]"},
                 {285365, "[238565, 3, 1]"},
@@ -16,8 +16,8 @@ public class FiveDataProvider extends DataProviderClass {
         };
         return combine(fiveImplPackageProvider(), param);
     }
-    @DataProvider(name = "invalidFindTheSmallest")
-    public static Object[][] invalidFindTheSmallest(){
+    @DataProvider(name = "negativeFindTheSmallest")
+    public static Object[][] negativeFindTheSmallest(){
         Object[][] param = new Object[][]{
                 {-261235, "[]"},
                 {-285365, "[]"},
@@ -27,8 +27,8 @@ public class FiveDataProvider extends DataProviderClass {
         return combine(fiveImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "validGap")
-    public static Object[][] validGap() {
+    @DataProvider(name = "positiveGap")
+    public static Object[][] positiveGap() {
         Object[][] param = {
                 {2, 100, 110, new long[]{101, 103}},
                 {4, 100, 110, new long[]{103, 107}},
@@ -38,8 +38,8 @@ public class FiveDataProvider extends DataProviderClass {
         return combine(fiveImplPackageProvider(), param);
     }
 
-    @DataProvider(name = "invalidGap")
-    public static Object[][] invalidGap() {
+    @DataProvider(name = "negativeGap")
+    public static Object[][] negativeGap() {
         Object[][] param = {
                 {6, 100, 110, null},
                 {1, 110, 100, null},

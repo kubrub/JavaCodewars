@@ -17,19 +17,19 @@ public class SevenTest extends SevenDataProvider {
         Assert.assertEquals(imp.newAvg(arr, navg), expected);
     }
 
-    @Test(dataProvider = "validSeriesSum")
+    @Test(dataProvider = "negativeLookingForABenefactor", expectedExceptions = Exception.class)
+    public void negativeTestLookingForABenefactor(ImplementationSevenKata imp, double[] arr, double navg) throws IOException {
+        imp.newAvg(arr, navg);
+    }
+
+    @Test(dataProvider = "positiveSeriesSum")
     public void validTestSeriesSum(ImplementationSevenKata imp, int n, String expected) {
         Assert.assertEquals(imp.seriesSum(n), expected);
     }
 
-    @Test(dataProvider = "invalidSeriesSum")
+    @Test(dataProvider = "negativeSeriesSum")
     public void invalidTestSeriesSum(ImplementationSevenKata imp, int n, String expected) {
         Assert.assertEquals(imp.seriesSum(n), expected);
-    }
-
-    @Test(dataProvider = "negativeLookingForABenefactor", expectedExceptions = Exception.class)
-    public void negativeTestLookingForABenefactor(ImplementationSevenKata imp, double[] arr, double navg) throws IOException {
-        imp.newAvg(arr, navg);
     }
 
     @Test

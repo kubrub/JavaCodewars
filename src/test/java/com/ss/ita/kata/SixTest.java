@@ -9,8 +9,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class SixTest extends SixDataProvider {
-
-
     @Test(dataProvider = "positiveFindNb")
     public void positiveTestFindNb(ImplementationSixKata impl, long actual, long expected) {
         Assert.assertEquals(impl.findNb(actual),expected);
@@ -24,50 +22,50 @@ public class SixTest extends SixDataProvider {
     public void testBalance() {
     }
 
-    @Test(dataProvider = "validFloatingPointApproximation")
+    @Test(dataProvider = "positiveFloatingPointApproximation")
     public void testF(ImplementationSixKata imp, double x, double expected) {
         Assert.assertEquals(imp.f(x),expected);
     }
 
-    @Test(dataProvider = "invalidFloatingPointApproximation")
+    @Test(dataProvider = "negativeFloatingPointApproximation")
     public void invalidTestF(ImplementationSixKata imp, double x, double expected) {
         Assert.assertEquals(imp.f(x),expected);
     }
 
-    @Test(dataProvider = "meanDataProvider")
+    @Test(dataProvider = "positiveMeanDataProvider")
     public void testMean(ImplementationSixKata impl, String town, String data, double expected) {
         Assert.assertEquals(impl.mean(town, data), expected);
     }
 
-    @Test(dataProvider = "invalidMeanDataProvider")
-    public void invalidTestMean(ImplementationSixKata impl, String town, String data, double expected) {
+    @Test(dataProvider = "negativeMeanDataProvider")
+    public void negativeTestMean(ImplementationSixKata impl, String town, String data, double expected) {
         Assert.assertEquals(impl.mean(town, data), expected);
     }
 
-    @Test(dataProvider = "varianceDataProvider")
+    @Test(dataProvider = "positiveVarianceDataProvider")
     public void testVariance(ImplementationSixKata impl, String town, String data, double expected) {
         Assert.assertEquals(impl.variance(town, data), expected);
     }
 
-    @Test(dataProvider = "invalidVarianceDataProvider")
+    @Test(dataProvider = "negativeVarianceDataProvider")
     public void invalidTestVariance(ImplementationSixKata impl, String town, String data, double expected) {
         Assert.assertEquals(impl.variance(town, data), expected);
     }
 
-    @Test(dataProvider = "validNbaCupDataProvider")
+    @Test(dataProvider = "positiveNbaCupDataProvider")
     public void testNbaCup(ImplementationSixKata imp,String resultSheet, String toFind,String expected) {
         Assert.assertEquals(imp.nbaCup(resultSheet,toFind), expected);
     }
-    @Test(dataProvider = "inValidNbaCupDataProvider")
-    public void NegativeTestNbaCup(ImplementationSixKata imp, String resultSheet,String toFind,String expected) {
+    @Test(dataProvider = "negativeNbaCupDataProvider")
+    public void negativeTestNbaCup(ImplementationSixKata imp, String resultSheet,String toFind,String expected) {
         Assert.assertEquals(imp.nbaCup(resultSheet,toFind), expected);
     }
 
-    @Test(dataProvider = "validHelpBooksellerDataProvider")
+    @Test(dataProvider = "positiveHelpBooksellerDataProvider")
     public void testStockSummary(ImplementationSixKata imp, String[] lstOfArt, String[] lstOf1stLetter,String expected) {
         Assert.assertEquals(imp.stockSummary(lstOfArt, lstOf1stLetter),expected);
     }
-    @Test(dataProvider = "invalidHelpBooksellerDataProvider")
+    @Test(dataProvider = "negativeHelpBooksellerDataProvider")
     public void testStockSummaryInvalid(ImplementationSixKata imp, String[] lstOfArt, String[] lstOf1stLetter,String expected) {
         Assert.assertEquals(imp.stockSummary(lstOfArt, lstOf1stLetter),expected);
     }
